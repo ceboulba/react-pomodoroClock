@@ -11,7 +11,7 @@ class App extends Component {
       sessionLength: 25,
       breakLength: 5,
       currentTime: 1500,
-      playing: false,
+      playing: true,
       type: false,
       time: 0
     }
@@ -91,6 +91,13 @@ this.setState({playing: !this.state.playing})
   }
 
   render() {
+    let timeLeft = this.state.currentTime
+
+    timeLeft === 0 && this.state.playing ? 
+      this.setState({
+        currentTime:this.state.breakLength *60,
+        playing: !this.state.playing})
+        : null
 
     return (
       <Fragment>
