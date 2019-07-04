@@ -5,8 +5,8 @@ export default ({time}) => {
   const seconds = time % 60 
   console.log('minutes : '+ minutes)
   const timeOut = (m, s)=>{
-    let mm = m.toString().length > 1 ? `${m}`: `${m}`
-    let ss = s.toString().length > 1 ? `${s}`: `${s}`
+    let mm = m.toString().length > 1 ? `${m}`: `0${m}`
+    let ss = s.toString().length > 1 ? `${s}`: `0${s}`
     return `${mm}:${ss}` 
   }
 
