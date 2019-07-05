@@ -74,9 +74,7 @@ class App extends Component {
   //gere le boutton play/pause
   play() {
     !this.state.playing ? (
-      this.timer = setInterval(() => {
-        this.setState({ currentTime: this.state.currentTime - 1 });
-      }, 100),
+      this.timer = setInterval(this.sub, 100),
       this.setState({ playing: !this.state.playing })
     )
       : (clearInterval(this.timer),
