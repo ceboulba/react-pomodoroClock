@@ -105,21 +105,6 @@ class App extends Component {
   }
 
   render() {
-    // let timeLeft = this.state.currentTime
-
-    // timeLeft === 0 && this.state.playing ?
-    //   this.setState({
-    //     currentTime: this.state.breakLength * 60,
-    //     playing: !this.state.playing
-    //   })
-    //   : null
-
-    // timeLeft === 0 && !this.state.playing ?
-    //   this.setState({
-    //     currentTime: this.state.sessionLength * 60,
-    //     playing: !this.state.playing
-    //   })
-    //   : null
 
     return (
       <Fragment>
@@ -173,7 +158,6 @@ class App extends Component {
                   </div>
                   <Chrono time={this.state.currentTime} />
                   <p id="timer-label" className="subtitle has-text-centered">{this.state.playing ? ` session` : ' break'}</p>
-                  <p className="subtitle has-text-centered">{this.state.playing ? `session` : ' break'}</p>
                   <p className='subtitle'>this State Time: {this.state.time}</p>
                 </div>
               </div>
