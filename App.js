@@ -11,7 +11,7 @@ class App extends Component {
       sessionLength: 25,
       breakLength: 5,
       currentTime: 1500,
-      playing: true,
+      playing: false,
       type: false,
       time: 0
     }
