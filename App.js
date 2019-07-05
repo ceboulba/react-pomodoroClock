@@ -59,17 +59,14 @@ class App extends Component {
 
   //reset de l'app
   reset = () => {
-    // this.stopInterval()
     clearInterval(this.timer);
     this.setState({
       breakLength: 5,
       sessionLength: 25,
       playing: false,
-      type:true,
       currentTime: 1500,
     })
     console.log('Reset')
-    // this.stopInterval()
   }
 
   //gere le boutton play/pause
