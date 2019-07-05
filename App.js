@@ -64,7 +64,7 @@ class App extends Component {
     this.setState({
       breakLength: 5,
       sessionLength: 25,
-      playing: false,
+      playing: true,
       currentTime: 1500,
     })
     console.log('Reset')
@@ -85,19 +85,27 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-this.state.currentTime === 0 && this.state.playing ?
-this.setState({playing: !this.state.playing})
-:null
+    this.state.currentTime === 0 && this.state.playing ?
+      this.setState({ playing: !this.state.playing })
+      : null
   }
 
   render() {
     let timeLeft = this.state.currentTime
 
-    timeLeft === 0 && this.state.playing ? 
+    timeLeft === 0 && this.state.playing ?
       this.setState({
-        currentTime:this.state.breakLength *60,
-        playing: !this.state.playing})
-        : null
+        currentTime: this.state.breakLength * 60,
+        playing: !this.state.playing
+      })
+      : null
+
+    timeLeft === 0 && !this.state.playing ?
+      this.setState({
+        currentTime: this.state.sessionLength * 60,
+        playing: !this.state.playing
+      })
+      : null
 
     return (
       <Fragment>
