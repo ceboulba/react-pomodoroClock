@@ -12,7 +12,7 @@ class App extends Component {
       breakLength: 5,
       currentTime: 1500,
       playing: false,
-      type: false,
+      type: true,
       time: 0
     }
 
@@ -64,7 +64,8 @@ class App extends Component {
     this.setState({
       breakLength: 5,
       sessionLength: 25,
-      playing: true,
+      playing: false,
+      type:true,
       currentTime: 1500,
     })
     console.log('Reset')
@@ -157,7 +158,7 @@ class App extends Component {
                     <button id="reset" onClick={this.reset} className="button is-danger">reset</button>
                   </div>
                   <Chrono time={this.state.currentTime} />
-                  <p id="timer-label" className="subtitle has-text-centered">{this.state.playing ? ` session` : ' break'}</p>
+                  <p id="timer-label" className="subtitle has-text-centered">{this.state.type ? `session` : ' break'}</p>
                   <p className='subtitle'>this State Time: {this.state.time}</p>
                 </div>
               </div>
