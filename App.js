@@ -85,12 +85,6 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    this.state.currentTime === 0 && this.state.playing ?
-      this.setState({ playing: !this.state.playing })
-      : null
-  }
-
-  render() {
     let timeLeft = this.state.currentTime
 
     timeLeft === 0 && this.state.playing ?
@@ -106,6 +100,28 @@ class App extends Component {
         playing: !this.state.playing
       })
       : null
+
+    this.state.currentTime === 0 && this.state.playing ?
+      this.setState({ playing: !this.state.playing })
+      : null
+  }
+
+  render() {
+    // let timeLeft = this.state.currentTime
+
+    // timeLeft === 0 && this.state.playing ?
+    //   this.setState({
+    //     currentTime: this.state.breakLength * 60,
+    //     playing: !this.state.playing
+    //   })
+    //   : null
+
+    // timeLeft === 0 && !this.state.playing ?
+    //   this.setState({
+    //     currentTime: this.state.sessionLength * 60,
+    //     playing: !this.state.playing
+    //   })
+    //   : null
 
     return (
       <Fragment>
