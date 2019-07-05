@@ -89,14 +89,14 @@ class App extends Component {
     timeLeft === 0 && this.state.playing ?
       this.setState({
         currentTime: this.state.breakLength * 60,
-        playing: !this.state.playing
+        type: !this.state.type
       })
       : null
 
     timeLeft === 0 && !this.state.playing ?
       this.setState({
         currentTime: this.state.sessionLength * 60,
-        playing: !this.state.playing
+        type: !this.state.type
       })
       : null
 
